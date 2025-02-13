@@ -140,7 +140,7 @@ class Dataset(ServerBase):
 
     def _fetch_configuration(self):
         # Get datasets using biomart.
-        response = self.get(type='configuration', dataset=self._name)
+        response = self.get(type='configuration', dataset=self._name, virtualSchema=self._virtual_schema)
 
         # Check response for problems.
         if 'Problem retrieving configuration' in response.text:
